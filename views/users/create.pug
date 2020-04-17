@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+    h1 Create User
+
+    form(action="/users/create", class="ml-2", method="POST")
+        div(class="form-group")
+            label(for="inputEmail") Email address
+            input(type="text", name="email", class="form-control w-50", placeholder="Enter email")
+        div(class="form-group")
+            label(for="inputName") Pass word
+            input(type="text", name="name", class="form-control w-50", placeholder="Enter name")
+        button(type="submit", class="btn btn-primary") Submit       
+        
+
+       

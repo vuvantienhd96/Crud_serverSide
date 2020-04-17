@@ -1,0 +1,9 @@
+extends ../layouts/common
+block content
+
+    div(class="card", style="width:15rem")
+        img(src="/images/5.PNG", class="card-img-top" alt="...")
+        div(class="card-body")
+            h5(class="card-title") #{user.name}
+            p(class="card-text") this is anything... 
+            a(href="./", class="btn btn-primary") Go to Users list
