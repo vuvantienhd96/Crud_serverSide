@@ -33,8 +33,8 @@ module.exports.remobeElement = function(req, res) {
 }
 
 module.exports.Postcreate = function(req, res) {
+    console.log(res.locals);
     req.body.id = shortid.generate();
-    console.log(req.body);
     db.get('users').push(req.body).write();
     res.redirect('/users');
 };

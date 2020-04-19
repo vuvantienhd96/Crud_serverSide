@@ -1,15 +1,17 @@
 extends ../layouts/common.pug
 block content
     h1 Create User
-
+    if err
+            each el in err
+                .alert.alert-danger= el
     form(action="/users/create", class="ml-2", method="POST")
-        div(class="form-group")
+        .form-group
             label(for="inputEmail") Email address
-            input(type="text", name="email", class="form-control w-50", placeholder="Enter email")
-        div(class="form-group")
+            input#email.form-control.w-50(type="text", name="email",value=values? values.email :'' ,placeholder="Enter email")
+        .form-group
             label(for="inputName") Pass word
-            input(type="text", name="name", class="form-control w-50", placeholder="Enter name")
-        button(type="submit", class="btn btn-primary") Submit       
+            input#name.form-control.w-50(type="text", name="name",value=values? values.name: '' placeholder="Enter name")
+        button.btn.btn-primary(type="submit",) Submit       
         
 
        
