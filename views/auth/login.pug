@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+    h1 User login
+    if err
+            each el in err
+                .alert.alert-danger= el
+    form( class="ml-2", method="POST")
+        .form-group
+            label(for="inputEmail") Email 
+            input#email.form-control.w-50(type="email", name="email",value=values? values.email :'' ,placeholder="Enter email")
+        .form-group
+            label(for="inputName") Password
+            input#passWord.form-control.w-50(type="password", name="password",value=values? values.password: '' placeholder="Enter name")
+        button.btn.btn-primary(type="submit",) Login       
+        

@@ -1,0 +1,15 @@
+extends ../layouts/common
+block content
+    include ../layouts/navbar.view.pug
+    div.container
+        h2 Product List
+        div.row
+            div.col(style="display: contents")
+                each val in products
+                    
+                    div.card.m-1( style="width:15rem;flex-grow: 1")
+                        img(src=val.images, class="card-img-top" alt="...")
+                        div(class="card-body")
+                            h5(class="card-title")= val.name
+                            p(class="card-text")  
+                            a(href="./", class="btn btn-primary") Go to Users list

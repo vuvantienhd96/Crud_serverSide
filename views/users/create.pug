@@ -1,5 +1,10 @@
 extends ../layouts/common.pug
+//- extends ../layouts/navbar.view.pug
+
+
+
 block content
+    include ../layouts/navbar.view.pug
     h1 Create User
     if err
             each el in err
@@ -13,5 +18,5 @@ block content
             input#name.form-control.w-50(type="text", name="name",value=values? values.name: '' placeholder="Enter name")
         button.btn.btn-primary(type="submit",) Submit       
         
-
+    
        
